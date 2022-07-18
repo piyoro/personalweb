@@ -1,3 +1,7 @@
+#logging config
+logging:
+  config: classpath:config/logback-config-server.xml
+
 piyoro:
   profile:
     value: dev-profile

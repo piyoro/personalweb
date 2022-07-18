@@ -18,20 +18,20 @@ public class TrxBaseFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 
-        log.debug("doFilter(ServletRequest, ServletResponse, FilterChain) - start");
-
         HttpServletRequest req = (HttpServletRequest) request;
+
 
         String reqTrcId = req.getHeader("reqTrcId");
         if (StringUtils.isBlank(reqTrcId)) {
             reqTrcId = DateUtil.getCurrentDate(CommonConst.DATE_PATERRN_YYYYMMDDHHMMSSSSS) + StringUtil.getFixedRandomStringId(3, "0")
                     + StringUtil.getFixedRandomStringId(3, "0") + StringUtil.getFixedRandomStringId(3, "0");
         }
-        ThreadUtil.setReqTrcId(reqTrcId);
         MDC.put("reqTrcId", reqTrcId);
 
-        chain.doFilter(req, response);
+        log.debug("doFilter(ServletRequest, ServletResponse, FilterChain) - start");
 
+        ThreadUtil.setReqTrcId(reqTrcId);
+        chain.doFilter(req, response);
 
         log.debug("doFilter(ServletRequest, ServletResponse, FilterChain) - end");
     }
