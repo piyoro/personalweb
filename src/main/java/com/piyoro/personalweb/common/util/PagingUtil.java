@@ -1,7 +1,7 @@
-package com.piyoro.personalweb.util;
+package com.piyoro.personalweb.common.util;
 
-import com.piyoro.personalweb.vo.paging.PagingVO;
-import com.piyoro.personalweb.vo.paging.PagingInfoVO;
+import com.piyoro.personalweb.common.vo.PagingVO;
+import com.piyoro.personalweb.common.vo.PagingInfoVO;
 
 import java.util.ArrayList;
 import java.util.List;

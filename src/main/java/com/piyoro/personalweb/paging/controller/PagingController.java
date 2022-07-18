@@ -1,9 +1,9 @@
-package com.piyoro.personalweb.controller.paging;
+package com.piyoro.personalweb.paging.controller;
 
-import com.piyoro.personalweb.dto.paging.ReqDto;
-import com.piyoro.personalweb.dto.paging.ResDto;
-import com.piyoro.personalweb.vo.paging.PagingVO;
-import com.piyoro.personalweb.util.PagingUtil;
+import com.piyoro.personalweb.paging.dto.ReqDto;
+import com.piyoro.personalweb.paging.dto.ResDto;
+import com.piyoro.personalweb.common.vo.PagingVO;
+import com.piyoro.personalweb.common.util.PagingUtil;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

@@ -1,6 +1,6 @@
-package com.piyoro.personalweb.dto.paging;
+package com.piyoro.personalweb.paging.dto;
 
-import com.piyoro.personalweb.vo.paging.PagingVO;
+import com.piyoro.personalweb.common.vo.PagingVO;
 import lombok.*;
 
 import java.util.List;

@@ -1,6 +1,6 @@
-package com.piyoro.personalweb.dto.paging;
+package com.piyoro.personalweb.paging.dto;
 
-import com.piyoro.personalweb.dto.common.CommonReqDto;
+import com.piyoro.personalweb.common.dto.CommonReqDto;
 import lombok.*;
 
 @Getter

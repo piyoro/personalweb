@@ -1,4 +1,4 @@
-package com.piyoro.personalweb.vo.paging;
+package com.piyoro.personalweb.common.vo;
 
 import lombok.*;
 

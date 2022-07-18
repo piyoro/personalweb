@@ -1,4 +1,4 @@
-package com.piyoro.personalweb.dto.common;
+package com.piyoro.personalweb.common.dto;
 
 import lombok.*;
 
