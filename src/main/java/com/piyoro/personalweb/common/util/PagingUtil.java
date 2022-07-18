@@ -1,8 +1,11 @@
 package com.piyoro.personalweb.common.util;
 
+import com.piyoro.personalweb.common.context.RequestContext;
 import com.piyoro.personalweb.common.vo.PagingVO;
 import com.piyoro.personalweb.common.vo.PagingInfoVO;
+import org.apache.commons.lang3.StringUtils;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -34,18 +37,24 @@ public class PagingUtil {
      * @param page 현재 페이지
      * @param pageBlockSize 페이징 사이즈
      * @param totalCnt 전체 건수
-     * @param reqUri 현재 uri
      * @return 페이징 정보
      */
-    public static PagingVO getPaging(int page, int pageSize, int pageBlockSize, int totalCnt, String reqUri) {
+    public static PagingVO getPaging(int page, int pageSize, int pageBlockSize, int totalCnt) {
+        HttpServletRequest req = RequestContext.getRequest();
+        String reqUri = req.getRequestURI();
+        String queryString = StringUtils.defaultIfBlank(req.getQueryString(), "");
+        if(StringUtils.isNotBlank(queryString)) {
+            queryString = "?" + queryString;
+        }
         PagingVO paging = PagingVO.builder()
-                .page(page)
-                .pageSize(pageSize)
-                .pageBlockSize(pageBlockSize)
-                .prevPage(page > 0)
-                .totalCnt(totalCnt)
-                .uri(reqUri)
-                .build();
+            .page(page)
+            .pageSize(pageSize)
+            .pageBlockSize(pageBlockSize)
+            .prevPage(page > 0)
+            .totalCnt(totalCnt)
+            .uri(reqUri)
+            .queryString(queryString)
+            .build();
 
         int totalPageCnt = (int) Math.ceil((double) totalCnt / pageSize); //전체 페이지 갯수
         //전체 페이징 블럭 갯수

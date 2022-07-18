@@ -14,25 +14,27 @@ import java.util.List;
 public class PagingVO {
 
     //전체 카운트
-    int totalCnt;
+    private int totalCnt;
     //현재 페이지
-    int page;
+    private int page;
     //요청한 페이징 사이즈
-    int pageSize;
+    private int pageSize;
     //페이징 블럭 사이즈
-    int pageBlockSize;
+    private int pageBlockSize;
     //
-    int totalPageBlockCnt;
+    private int totalPageBlockCnt;
     //이전 페이지 여부
-    boolean prevPage;
+    private boolean prevPage;
     //다음 페이지 여부
-    boolean nextPage;
+    private boolean nextPage;
     //이전 페이지 블럭 여부
-    boolean prevPageBlock;
+    private boolean prevPageBlock;
     //다음 페이지 블럭 여부
-    boolean nextPageBlock;
+    private boolean nextPageBlock;
     //
-    String uri;
+    private String uri;
+    //get 쿼리스트링
+    private String queryString;
 
     List<PagingInfoVO> list;
 

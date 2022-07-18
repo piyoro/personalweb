@@ -25,7 +25,7 @@ public class PagingController {
         int totalCnt = pageList.size();
         //굳이 목록도 넘겨 준다면.
         List<Integer> list = PagingUtil.getPageList(reqPage, reqPageSize, totalCnt, pageList);
-        PagingVO paging = PagingUtil.getPaging(reqPage, reqPageSize, reqPageBlockSize, totalCnt, req.getRequestURI());
+        PagingVO paging = PagingUtil.getPaging(reqPage, reqPageSize, reqPageBlockSize, totalCnt);
         ResDto response = ResDto.builder()
                 .paging(paging)
                 .build();
