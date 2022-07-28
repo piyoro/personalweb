@@ -13,11 +13,11 @@ public class DateUtil {
     }
 
     public static String getCurrentTimeStamp() {
-        return getCurrentDate(CommonConst.DATE_PATERRN_YYYYMMDDHHMMSSSSS);
+        return getCurrentDate(CommonConst.DATE_PATTERN_YYYYMMDDHHMMSSSSS);
     }
 
     public static String dateFormat(String date, String format) {
-        return DateUtil.dateFormat(date, CommonConst.DATE_PATERRN_YYYYMMDDHHMMSSSSS, CommonConst.DATE_FORMAT_YYYYMMDDHHMMSSSSS);
+        return DateUtil.dateFormat(date, CommonConst.DATE_PATTERN_YYYYMMDDHHMMSSSSS, CommonConst.DATE_FORMAT_YYYYMMDDHHMMSSSSS);
     }
 
     public static String dateFormat(String date, String pattern, String format) {
@@ -52,9 +52,9 @@ public class DateUtil {
      * @return 0: 사이 음수: 이전 양수: 이후
      */
     public static int between(String startDt, String endDt) {
-        LocalDateTime startDate = LocalDateTime.parse(startDt, DateTimeFormatter.ofPattern(CommonConst.DATE_PATERRN_YYYYMMDDHHMMSS));
+        LocalDateTime startDate = LocalDateTime.parse(startDt, DateTimeFormatter.ofPattern(CommonConst.DATE_PATTERN_YYYYMMDDHHMMSS));
         LocalDateTime now = LocalDateTime.now();
-        LocalDateTime endDate = LocalDateTime.parse(endDt, DateTimeFormatter.ofPattern(CommonConst.DATE_PATERRN_YYYYMMDDHHMMSS));
+        LocalDateTime endDate = LocalDateTime.parse(endDt, DateTimeFormatter.ofPattern(CommonConst.DATE_PATTERN_YYYYMMDDHHMMSS));
         int r = now.compareTo(startDate);
         if(r < 0) {
             return r;
@@ -73,14 +73,14 @@ public class DateUtil {
      */
     public static int compare(String compareDt) {
         LocalDateTime now = LocalDateTime.now();
-        LocalDateTime endDate = LocalDateTime.parse(compareDt, DateTimeFormatter.ofPattern(CommonConst.DATE_PATERRN_YYYYMMDDHHMMSS));
+        LocalDateTime endDate = LocalDateTime.parse(compareDt, DateTimeFormatter.ofPattern(CommonConst.DATE_PATTERN_YYYYMMDDHHMMSS));
         int r = now.compareTo(endDate);
         return r;
     }
 
     public static int compare(String startDt, String endDt) {
-        LocalDateTime startDate = LocalDateTime.parse(startDt, DateTimeFormatter.ofPattern(CommonConst.DATE_PATERRN_YYYYMMDDHHMMSS));
-        LocalDateTime endDate = LocalDateTime.parse(endDt, DateTimeFormatter.ofPattern(CommonConst.DATE_PATERRN_YYYYMMDDHHMMSS));
+        LocalDateTime startDate = LocalDateTime.parse(startDt, DateTimeFormatter.ofPattern(CommonConst.DATE_PATTERN_YYYYMMDDHHMMSS));
+        LocalDateTime endDate = LocalDateTime.parse(endDt, DateTimeFormatter.ofPattern(CommonConst.DATE_PATTERN_YYYYMMDDHHMMSS));
         int r = startDate.compareTo(endDate);
         return r;
     }

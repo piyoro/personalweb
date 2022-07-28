@@ -38,4 +38,19 @@ public class CommonResDto {
         response.setBody(body);
         return response;
     }
+
+    public static CommonResDto getResponseVO(String code, String msg, Object body) {
+
+        CommonRestHeaderDto header = new CommonRestHeaderDto();
+        header.setCode(code);
+        header.setMsg(msg);
+        header.setReqTrcId(ThreadUtil.getReqTrcId());
+
+        CommonResDto response = new CommonResDto();
+        response.setHeader(header);
+
+        response.setBody(body);
+
+        return response;
+    }
 }

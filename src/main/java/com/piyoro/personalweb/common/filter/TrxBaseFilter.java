@@ -23,7 +23,7 @@ public class TrxBaseFilter implements Filter {
 
         String reqTrcId = req.getHeader("reqTrcId");
         if (StringUtils.isBlank(reqTrcId)) {
-            reqTrcId = DateUtil.getCurrentDate(CommonConst.DATE_PATERRN_YYYYMMDDHHMMSSSSS) + StringUtil.getFixedRandomStringId(3, "0")
+            reqTrcId = DateUtil.getCurrentDate(CommonConst.DATE_PATTERN_YYYYMMDDHHMMSSSSS) + StringUtil.getFixedRandomStringId(3, "0")
                     + StringUtil.getFixedRandomStringId(3, "0") + StringUtil.getFixedRandomStringId(3, "0");
         }
         MDC.put("reqTrcId", reqTrcId);
